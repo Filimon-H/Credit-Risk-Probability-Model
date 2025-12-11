@@ -9,7 +9,6 @@ from typing import Any, Dict, List, Tuple
 import matplotlib.pyplot as plt
 import mlflow
 import mlflow.sklearn
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -402,9 +401,9 @@ def train_all_models(
     results = {}
 
     for model_name, config in model_configs.items():
-        print(f"\n{'='*50}")
+        print(f"\n{'=' * 50}")
         print(f"Training: {model_name}")
-        print(f"{'='*50}")
+        print(f"{'=' * 50}")
 
         model, metrics, run_id = train_and_log_model(
             model_name=model_name,

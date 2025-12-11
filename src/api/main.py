@@ -8,16 +8,16 @@ This API provides endpoints for:
 import sys
 from pathlib import Path
 
-# Add src to path for imports
-src_path = Path(__file__).resolve().parents[1]
-if str(src_path) not in sys.path:
-    sys.path.insert(0, str(src_path))
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.pydantic_models import CustomerFeatures, HealthResponse, RiskPrediction
 from predict import is_model_loaded, load_model, predict_single
+
+# Add src to path for imports (after imports to satisfy flake8 E402)
+src_path = Path(__file__).resolve().parents[1]
+if str(src_path) not in sys.path:
+    sys.path.insert(0, str(src_path))
 
 # Initialize FastAPI app
 app = FastAPI(

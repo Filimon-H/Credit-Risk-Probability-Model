@@ -5,7 +5,6 @@ Task 4: Create proxy target variable via RFM metrics and K-Means clustering.
 
 from typing import Optional, Tuple
 
-import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
@@ -175,9 +174,9 @@ def assign_high_risk(df_rfm: pd.DataFrame) -> pd.DataFrame:
 
     # Risk score = sum of ranks (higher = worse)
     cluster_summary["risk_score"] = (
-        cluster_summary["recency_rank"] +
-        cluster_summary["frequency_rank"] +
-        cluster_summary["monetary_rank"]
+        cluster_summary["recency_rank"]
+        + cluster_summary["frequency_rank"]
+        + cluster_summary["monetary_rank"]
     )
 
     # High-risk cluster is the one with highest risk score

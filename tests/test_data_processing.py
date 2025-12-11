@@ -5,7 +5,6 @@ Task 5: At least two unit tests for helper functions.
 
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import pytest
 
