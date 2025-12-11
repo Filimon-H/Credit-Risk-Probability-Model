@@ -21,3 +21,20 @@ venv/
 # Data files
 data/
 .venv/
+.env    
+
+# Model artifacts (generated, not versioned)
+models/
+
+# MLflow runs (experiment tracking data)
+mlruns/
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
